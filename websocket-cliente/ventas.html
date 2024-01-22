@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+  <title>My Sales</title>
+</head>
+<body>
+    <div class="min-h-full">
+        <header class="bg-white shadow">
+          <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl font-bold text-gray-900">Mis ventas</h1>
+          </div>
+        </header>
+        <main>
+          <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+            <span class="sm:ml-3">
+              <button id="btnShowModal" type="button"
+                      class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                <svg class="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                     fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd"/>
+                </svg>
+                Venta
+              </button>
+            </span>
+          </div>
+          <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+            <!-- Replace with your content -->
+            <div class="px-4 py-6 sm:px-0">
+              <canvas id="myChart"></canvas>
+            </div>
+            <!-- /End replace -->
+          </div>
+        </main>
+      </div>
+       
+  <!-- Esta es la sombra gris que está debajo del modal -->
+  <div id="modalBackground" class="fixed inset-0 bg-gray-600 bg-opacity-75 transition-opacity invisible"></div>
+
+    <!-- Este es el modal -->
+    <div id="modal" class="fixed z-10 inset-0 overflow-y-auto max-w-7xl mx-auto py-24 sm:px-6 lg:px-8 invisible">
+        <div class="md:grid md:grid-cols-2 md:gap-6">
+          <div class="mt-5 md:mt-0 md:col-span-2">
+            <form action="#" method="POST">
+              <div class="shadow sm:rounded-md sm:overflow-hidden">
+                <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
+                  <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Producto a la venta
+                  </p>
+                  <div class="grid grid-cols-3 gap-6">
+                    <div class="col-span-3 sm:col-span-2">
+                      <label for="productId" class="block text-sm font-medium text-gray-700">
+                        Producto
+                      </label>
+                      <div class="mt-1 flex rounded-md shadow-sm">
+                        <select id="productId"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                          <option value="1" selected>Zapatos</option>
+                          <option value="2">Camisas</option>
+                          <option value="3">Pantalones</option>
+                          <option value="4">Ropa Interior</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+    
+                  <div>
+                    <label for="amount" class="block text-sm font-medium text-gray-700">
+                      Amount
+                    </label>
+                    <div class="mt-1">
+                      <input type="number" id="amount"
+                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                             placeholder="1" required>
+                    </div>
+                    <p class="mt-2 text-sm text-gray-500">
+                      ¿Cuántos productos estás vendiendo?
+                    </p>
+                  </div>
+                </div>
+                <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                  <button id="btnCancel"
+                          class="bg-transparent hover:bg-blue-500 text-blue-600 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                    Cancelar
+                  </button>
+                  <button id="btnSale"
+                          class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    Guardar
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    
+    <script src="ventas.js"></script>
+</body>

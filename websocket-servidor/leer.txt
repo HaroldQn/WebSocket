@@ -1,0 +1,7 @@
+Pirmero instalar esta dependencia 
+1. npm init -y
+2. npm install websocket
+
+Iniciamos el servidor 
+3. npm start 
+Si todo esta correcto el websocket estaria en el puerto 8080 ("ws://localhost:8080") 
