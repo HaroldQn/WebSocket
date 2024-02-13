@@ -15,7 +15,7 @@ wsServer = new WebSocketServer({
     // You should not use autoAcceptConnections for production
     // applications, as it defeats all standard cross-origin protection
     // facilities built into the protocol and the browser.  You should
-    // *always* verify the connection's origin and decide whether or not
+    // *always* verify the connection's origin and decide whether or notÑ
     // to accept it.
     autoAcceptConnections: false
 });
